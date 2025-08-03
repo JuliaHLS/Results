@@ -1,0 +1,20 @@
+programs:
+  - output_name: front_end_cordic_full_opt
+    mlir_file: ./mlir/cordic/full_opt.mlir
+  - output_name: front_end_cordic_no_opt
+    mlir_file: ./mlir/cordic/no_opt.mlir
+  - output_name: front_end_conv2d_im2col_full_opt
+    mlir_file: ./mlir/convolution/full_opt.mlir
+  - output_name: front_end_conv2d_im2col_no_opt
+    mlir_file: ./mlir/convolution/no_opt.mlir
+
+  - output_name: back_end_cordic_full_opt
+    mlir_file: ./post_mem_op_optimisations/cordic/results/full_opt.mlir
+  - output_name: back_end_cordic_no_opt
+    mlir_file: ./post_mem_op_optimisations/cordic/results/no_opt.mlir
+  - output_name: back_end_conv2d_im2col_full_opt
+    mlir_file: ./post_mem_op_optimisations/conv2d_im2col/results/full_opt.mlir
+  - output_name: back_end_conv2d_im2col_no_opt
+    mlir_file: ./post_mem_op_optimisations/conv2d_im2col/results/no_opt.mlir
+
+
