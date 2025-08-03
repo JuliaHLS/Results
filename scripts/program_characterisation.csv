@@ -1,0 +1,9 @@
+Program Name,basic_blocks,total_ops,type_casts,empty_basic_blocks,arithmetic_ops,memory_ops,memory_copies,tensor_arithmetic_ops,memory_modifications_without_tensor_arithmetic
+front_end_cordic_full_opt,7,58,4,0,17,0,2,0,1
+front_end_cordic_no_opt,14,129,13,4,44,0,3,0,1
+front_end_conv2d_im2col_full_opt,49,379,100,0,56,0,84,4,3
+front_end_conv2d_im2col_no_opt,49,486,108,0,70,0,84,4,3
+back_end_cordic_full_opt,5,76,1,0,18,19,1,0,0
+back_end_cordic_no_opt,14,88,1,5,18,19,4,0,0
+back_end_conv2d_im2col_full_opt,63,203,10,5,78,20,6,0,0
+back_end_conv2d_im2col_no_opt,79,306,10,0,82,21,87,0,0

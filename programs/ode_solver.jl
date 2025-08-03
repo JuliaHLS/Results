@@ -44,7 +44,12 @@ import Base: *
 end
 
 @inline function div(x::Fixed{T,Q}, y::Fixed{T,Q})::Fixed{T,Q} where {T<:Integer,Q}
-    raw::Int = (reinterpret(T, x) << Q) + reinterpret(T, y)
+    raw::Int = (reinterpret(T, x) << Q) ÷ reinterpret(T, y)
+    return reinterpret(Fixed{T,Q},raw)
+end
+
+@inline function div(x::Fixed{T,Q}, y::T)::Fixed{T,Q} where {T<:Integer,Q}
+    raw::Int = (reinterpret(T, x)) ÷ y
     return reinterpret(Fixed{T,Q},raw)
 end
 
@@ -54,11 +59,11 @@ end
     return reinterpret(Fixed{T,Q},raw2)
 end
 
-@force_inline function Base.:-(x::Fixed{T,Q}, y::Fixed{T,Q})::Fixed{T,Q} where {T<:Integer,Q}
-    raw = reinterpret(T, x) - reinterpret(T, y)
-    raw2 = raw >> T(Q)
-    return reinterpret(Fixed{T,Q},raw2)
-end
+# @force_inline function Base.:-(x::Fixed{T,Q}, y::Fixed{T,Q})::Fixed{T,Q} where {T<:Integer,Q}
+#     raw = reinterpret(T, x) - reinterpret(T, y)
+#     raw2 = raw >> T(Q)
+#     return reinterpret(Fixed{T,Q},raw2)
+# end
 
 @force_inline function Base.:*(x::T, y::Fixed{T,Q})::Fixed{T,Q} where {T<:Integer,Q}
     raw = (x << Q) * reinterpret(T, y)
